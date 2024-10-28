@@ -1,0 +1,17 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4%;
+}
+
+.navbar .logo{
+    /* This css property belows calculates 10% of the parent element width 
+    If it is less than 80px the element mainatins 80px ,if it is lower the element takes the 10%  */
+    width: max(10%,80px);
+}
+
+.navbar .profile{
+    width: 40px ;
+    
+}

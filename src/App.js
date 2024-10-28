@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import './index.css';
+import Navbar from "./components/Navbar/Navbar";
+import Sidebar from "./components/Sidebar/Sidebar";
+import { Route, Routes } from "react-router-dom";
+import Add from "./pages/Add/Add";
+import List from "./pages/List/List";
+import Orders from "./pages/Orders/Orders";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function App() {
+const App = () => {
+    const url = "http://localhost:4000"
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <ToastContainer/>
+      <Navbar />
+      <hr/>
+    <div className="app-content">
+      <Sidebar/>
+      <Routes>
+        <Route path="/add" element={<Add url={url}/>}/>
+        <Route path="/list" element={<List url={url}/>}/>
+        <Route path="/Orders" element={<Orders url={url}/>}/>
+      </Routes>
     </div>
+    </>
   );
-}
+};
 
 export default App;
