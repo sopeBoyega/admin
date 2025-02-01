@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom'
 const Sidebar = () => {
   return (
    <div className="sidebar">
+    {/* side bar componet  is mounted  */}
     <div className="sidebar-options">
         <NavLink to='/add' className="sidebar-option">
             <img src={assets.add_icon} alt="" />
